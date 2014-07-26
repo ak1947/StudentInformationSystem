@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="OBS_Interface_5.Views.OgrenciBilgileri"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="900" Height="450">
+    <UserControl.Resources>
+        <Style x:Key="groupBoxStyle" TargetType="GroupBox">
+            <Setter Property="BorderBrush" Value="MediumSlateBlue"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+    </UserControl.Resources>
+            <Grid VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Column="0" Header="Fotoğraf" Style="{StaticResource groupBoxStyle}">
+                <Grid>
+                <Border BorderThickness="5" BorderBrush="Black" Name="pictureBorder" CornerRadius="5">
+                    <Image Source="C:\Users\-ZaferAYAN-\Documents\Visual Studio 2012\Projects\OBS Interface 5\OBS Interface 5\Images\ProfilePicture.jpg" Name="imgStudentPicture"  Width="200" MouseEnter="imgStudentPicture_MouseEnter" MouseLeave="imgStudentPicture_MouseLeave"/>
+                </Border>
+                <Button Name="btnPictureChange" Margin="10,160,10,15" Height="25" Width="75" Content="Değiştir" Opacity="0.5" MouseEnter="btnPictureChange_MouseEnter" MouseLeave="btnPictureChange_MouseLeave" Click="btnPictureChange_Click"/>
+                </Grid>
+        </GroupBox>
+                <GroupBox Grid.Column="1" Header="Kişisel Bilgiler" Style="{StaticResource groupBoxStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Öğrenci Numarası:"/>
+                        <Label Grid.Row="1" Content="TC:"/>
+                        <Label Grid.Row="2" Content="Adı:"/>
+                        <Label Grid.Row="3" Content="Soyadı:"/>
+                        <Label Grid.Row="4" Content="Cinsiyeti:"/>
+                        <Label Grid.Row="5" Content="Doğum Tarihi:"/>
+                        <Label Grid.Row="6" Content="Askerlik Durumu:"/>
+                <Label Name="studentIDLabel" Grid.Row="0" Grid.Column="1"/>
+                        <Label Name="TCLabel" Grid.Row="1" Grid.Column="1"/>
+                        <Label Name="studentNameLabel" Grid.Row="2" Grid.Column="1"/>
+                        <Label Name="studentLastNameLabel" Grid.Row="3" Grid.Column="1"/>
+                        <Label Name="studentSexLabel" Grid.Row="4" Grid.Column="1" />
+                        <Label Name="studentBirthLabel" Grid.Row="5" Grid.Column="1"/>
+                <Label Name="MilitaryStatusLabel" Grid.Row="6" Grid.Column="1"/>
+
+            </Grid>
+                </GroupBox>
+                <GroupBox Grid.Column="2" Header="İletişim Bilgileri" Style="{StaticResource groupBoxStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="E-posta:"/>
+                        <Label Grid.Row="1" Content="Ev Telefonu:"/>
+                        <Label Grid.Row="2" Content="Cep Telefonu:"/>
+                        <Label Grid.Row="3" Content="Yakın Telefonu:"/>
+                        <Label Grid.Row="4" Content="Yakınlık Derecesi:"/>
+                        <Label Name="eMailLabel"  Grid.Row="0" Grid.Column="1"/>
+                        <Label Name="evTelLabel" Grid.Row="1" Grid.Column="1"/>
+                        <Label Name="cepTelLabel" Grid.Row="2" Grid.Column="1" />
+                        <Label Name="yakinTelLabel" Grid.Row="3" Grid.Column="1" />
+                        <Label Name="yakinDereceLabel" Grid.Row="4" Grid.Column="1"/>
+                        <TextBox Name="eMailTextBox" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
+                        <TextBox Name="evTelTextBox" Grid.Row="1" Grid.Column="1" Visibility="Hidden"/>
+                        <TextBox Name="cepTelTextBox" Grid.Row="2" Grid.Column="1" Visibility="Hidden"/>
+                        <TextBox Name="yakinTelTextBox" Grid.Row="3" Grid.Column="1" Visibility="Hidden"/>
+                        <TextBox Name="yakinDereceTextBox" Grid.Row="4" Grid.Column="1" Visibility="Hidden"/>
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="1" Content="Güncelle" Width="75" Height="25" Name="btnIletisimGuncelle" Click="btnIletisimGuncelle_Click"/>
+                    <Button Grid.Column="1" Content="Tamam" Width="75" Height="25" Name="btnTamamIletisim" Visibility="Hidden" Click="btnTamamIletisim_Click"/>
+                </Grid>
+            </Grid>
+        </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="0" Header="Danışman Bilgileri" Style="{StaticResource groupBoxStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Ad:"/>
+                        <Label Grid.Row="1" Content="Soyad:"/>
+                        <Label Grid.Row="2" Content="Ünvan:"/>
+                        <Label Grid.Row="3" Content="Tel:"/>
+                        <Label Grid.Row="4" Content="E-Mail:"/>
+                        <Label Name="staffNameLabel" Grid.Row="0" Grid.Column="1" />
+                        <Label Name="staffLastNameLabel" Grid.Row="1" Grid.Column="1"/>
+                        <Label Name="staffUnvanLabel" Grid.Row="2" Grid.Column="1"/>
+                        <Label Name="staffTelLabel" Grid.Row="3" Grid.Column="1"/>
+                        <Label Name="staffEMailLabel" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                </GroupBox>
+    </Grid>
+</UserControl>

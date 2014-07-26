@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="OBS_Interface_5.Views.YariYilNotBilgileriDatabase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <StackPanel>
+        <DockPanel VerticalAlignment="Top">
+            <Label HorizontalAlignment="Left" Content="Görüntülemek istediğiniz yarıyılı seçiniz:" />
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Name="yariYilComboBox" SelectedIndex="0"  Width="100" Height="25" Margin="5,0,0,0" SelectionChanged="yariYilComboBox_SelectionChanged" >
+                <ComboBoxItem Content="1. Yarıyıl"/>
+                <ComboBoxItem Content="2. Yarıyıl"/>
+                <ComboBoxItem Content="3. Yarıyıl"/>
+                <ComboBoxItem Content="4. Yarıyıl"/>
+                <ComboBoxItem Content="5. Yarıyıl"/>
+                <ComboBoxItem Content="6. Yarıyıl"/>
+                <ComboBoxItem Content="7. Yarıyıl"/>
+                <ComboBoxItem Content="8. Yarıyıl"/>
+            </ComboBox>
+            <Button Name="btnTumu" HorizontalAlignment="Left" Content="Tümünü Görüntüle" Width="120" Height="25" Margin="5,0,0,0" Click="btnTumu_Click"/>
+        </DockPanel>
+    <ListView  Name="notListView" Width="600" HorizontalAlignment="Left">
+            <ListView.Resources>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding katsayi}" Value="4">
+                            <Setter Property="Background" Value="#FF01FF00" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="3.5">
+                            <Setter Property="Background" Value="#FF53FF00" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="3">
+                            <Setter Property="Background" Value="#FF90FF00" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="2.5">
+                            <Setter Property="Background" Value="#FFCDFF00" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="2">
+                            <Setter Property="Background" Value="#FFFFF400" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="1.5">
+                            <Setter Property="Background" Value="#FFFFB700" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="1">
+                            <Setter Property="Background" Value="#FFFF7900" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="0.5">
+                            <Setter Property="Background" Value="#FFFF3C00" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding katsayi}" Value="0">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+                <ListView.View>
+            <GridView AllowsColumnReorder="true">
+                    <GridViewColumn Header="Ders Kodu" Width="100" DisplayMemberBinding="{Binding Path=dersKodu}" />
+                    <GridViewColumn Header="Ders Adı" Width="200" DisplayMemberBinding="{Binding Path=dersAdi}" />
+                    <GridViewColumn Header="Vize" Width="50" DisplayMemberBinding="{Binding Path=vize}" />
+                    <GridViewColumn Header="Final" Width="50" DisplayMemberBinding="{Binding Path=final}" />
+                    <GridViewColumn Header="Ortalama" Width="60" DisplayMemberBinding="{Binding Path=ortalama}" />
+                    <GridViewColumn Header="Katsayı" Width="60" DisplayMemberBinding="{Binding Path=katsayi}" />
+                    <GridViewColumn Header="Harf Notu" Width="60" DisplayMemberBinding="{Binding Path=harf}" />
+
+                </GridView>
+        </ListView.View>
+    </ListView>
+    </StackPanel>
+</UserControl>

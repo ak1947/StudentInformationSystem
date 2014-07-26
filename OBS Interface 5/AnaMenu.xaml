@@ -1,0 +1,30 @@
+﻿<Window x:Class="OBS_Interface_5.AnaMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GirisEkrani" Height="480" Width="920" Background="White">
+    <Window.Resources>
+        <Style x:Key="groupBoxStyle" TargetType="GroupBox">
+            <Setter Property="BorderBrush" Value="MediumSlateBlue"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <DockPanel VerticalAlignment="Top">
+                <Menu>
+                    <MenuItem Header="_File" Height="25">
+                        <MenuItem Header="Open"/>
+                    </MenuItem>
+                    <MenuItem Header="_Bilgiler" Height="25">
+                        <MenuItem Name="DersProgramMenu" Header="Ders Programı" Click="DersProgramMenu_Click"/>
+                        <MenuItem Name="OgrenciBilgileriMenu" Header="Öğrenci Bilgileri" Click="OgrenciBilgileriMenu_Click"/>
+                        <MenuItem Name="NotDurumDatabase" Header="NotDurumDatabase" Click="NotDurumDatabase_Click"/>
+                        <MenuItem Name="TranskriptMenu" Header="Transkript Bilgileri" Click="TranskriptMenu_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <DockPanel Name="MenuIcerigi">
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>
