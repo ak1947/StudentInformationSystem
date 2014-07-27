@@ -19,7 +19,7 @@
     <Grid>
         <StackPanel>
             <Border BorderBrush="Gray" Opacity="20" BorderThickness="10" CornerRadius="10" Width="170" Margin="40">
-                <Image Source="/Images/blank_profile_male.jpg" Width="170"/>
+                <Image Source="/Images/ProfilePicture.jpg" Width="170"/>
             </Border>
             <Grid>
                 <Grid.RowDefinitions>
